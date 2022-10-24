@@ -1,4 +1,4 @@
-# OCI Stabble difussion
+# OCI Stable difussion
 Terraform script to start a stable-diffusion-model (v1.4) in compute instance using a nvidia GPU in OCI.
 
 ## Configuration
@@ -26,6 +26,15 @@ terraform apply
 ```
 
 **After applying, the service will be ready in about 20 minutes** (it will install OS dependencies, nvidia drivers, clone stable-difussion-webui and download stable-diffusion-model)
+
+## Test
+To test the app it's necessary to create a ssh tunel to the port 7860 (the terraform output will give you the full command with the public IP)
+
+```
+ssh -i server.key -L 7860:localhost:7860 ubuntu@<instance-public-ip>
+```
+
+And after that open in a browser the url http://localhost:7860
 
 ## Clean
 To delete the instance execute.
