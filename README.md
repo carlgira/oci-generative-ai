@@ -1,4 +1,4 @@
-# OCI Stable difussion
+# oci stable difussion
 Terraform script to start a stable-diffusion-model (v1.4) in compute instance using a nvidia GPU in OCI.
 
 ## Configuration
@@ -44,3 +44,7 @@ terraform destroy
 
 ## Stable diffusion model
 Right now the terraform is using the stable-diffusion-1.4, because I got a direct link to download the model, if you want to use 1.5 or any more recent version, you got to go to https://huggingface.co/ singup, login, download the model manually and replace the file in the location /home/ubuntu/stable-diffusion-webui/model.ckpt.
+
+## References
+
+- The stable-diffusion-webui project https://github.com/AUTOMATIC1111/stable-diffusion-webui
