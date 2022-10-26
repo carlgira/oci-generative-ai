@@ -9,7 +9,7 @@ Stable Diffusion is a state of the art text-to-image model that generates images
 
 The architecture consist only in a GPU instance where all the dependecies and software is installed.
 
-<img src="architecture.png" />
+<img src="architecture.drawio.png" />
 
 ## Configuration
 
