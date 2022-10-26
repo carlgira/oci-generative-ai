@@ -1,5 +1,15 @@
 # oci stable difussion
-Terraform script to start a stable-diffusion-model (v1.4) in compute instance using a nvidia GPU in OCI.
+Terraform script to start a stable-diffusion-webui in compute instance using a nvidia GPU in OCI.
+
+Stable Diffusion is a state of the art text-to-image model that generates images from text.
+
+<img src="stable-diffusion-webui-sample.jpg" />
+
+## Architecture
+
+The architecture consist only in a GPU instance where all the dependecies and software is installed.
+
+<img src="architecture.png" />
 
 ## Configuration
 
