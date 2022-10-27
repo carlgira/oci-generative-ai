@@ -40,15 +40,15 @@ data "oci_identity_availability_domains" "ADs" {
 # Create internet gateway
 resource "oci_core_internet_gateway" "internet_gateway" {
   compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_virtual_network.stable_diffusion_vcn.id
-  display_name   = "stable-diffusion-internet-gateway"
+  vcn_id         = oci_core_virtual_network.generative_ai_vcn.id
+  display_name   = "generative-ai-internet-gateway"
 }
 
 # Create route table
-resource "oci_core_route_table" "stable_diffusion_route_table" {
+resource "oci_core_route_table" "generative_ai_route_table" {
   compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_virtual_network.stable_diffusion_vcn.id
-  display_name   = "stable-diffusion-route-table"
+  vcn_id         = oci_core_virtual_network.generative_ai_vcn.id
+  display_name   = "generative-ai-route-table"
   route_rules {
     destination = "0.0.0.0/0"
     network_entity_id = oci_core_internet_gateway.internet_gateway.id
@@ -56,10 +56,10 @@ resource "oci_core_route_table" "stable_diffusion_route_table" {
 }
 
 # Create security list with ingress and egress rules
-resource "oci_core_security_list" "stable_diffusion_security_list" {
+resource "oci_core_security_list" "generative_ai_security_list" {
   compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_virtual_network.stable_diffusion_vcn.id
-  display_name   = "stable-diffusion-security-list"
+  vcn_id         = oci_core_virtual_network.generative_ai_vcn.id
+  display_name   = "generative-ai-security-list"
 
   egress_security_rules {
     destination = "0.0.0.0/0"
@@ -89,18 +89,18 @@ resource "oci_core_security_list" "stable_diffusion_security_list" {
 resource "oci_core_subnet" "subnet" {
   cidr_block        = var.subnet_cidr
   compartment_id    = var.compartment_ocid
-  display_name      = "stable-diffusion-subnet"
-  vcn_id            = oci_core_virtual_network.stable_diffusion_vcn.id
-  route_table_id    = oci_core_route_table.stable_diffusion_route_table.id
-  security_list_ids = ["${oci_core_security_list.stable_diffusion_security_list.id}"]
-  dhcp_options_id   = oci_core_virtual_network.stable_diffusion_vcn.default_dhcp_options_id
+  display_name      = "generative-ai-subnet"
+  vcn_id            = oci_core_virtual_network.generative_ai_vcn.id
+  route_table_id    = oci_core_route_table.generative_ai_route_table.id
+  security_list_ids = ["${oci_core_security_list.generative_ai_security_list.id}"]
+  dhcp_options_id   = oci_core_virtual_network.generative_ai_vcn.default_dhcp_options_id
 }
 
 # Create a virtual network
-resource "oci_core_virtual_network" "stable_diffusion_vcn" {
+resource "oci_core_virtual_network" "generative_ai_vcn" {
   cidr_block     = var.vcn_cidr
   compartment_id = var.compartment_ocid
-  display_name   = "stable-diffusion-vcn"
+  display_name   = "generative-ai-vcn"
 }
 
 output "instance_public_ip" {
@@ -110,10 +110,11 @@ output "instance_public_ip" {
   Then, you can connect to the instance using the following command:
 
   ssh tunnel => 
-    ssh -i server.key -L 7860:localhost:7860 ubuntu@${oci_core_instance.instance.public_ip}
+    ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 ubuntu@${oci_core_instance.instance.public_ip}
 
-  Open the url =>
-    http://localhost:7860
+  stable diffusion => http://localhost:7860
+  
+  bloom => http://localhost:5000
 
 EOF
 }

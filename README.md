@@ -1,9 +1,13 @@
-# oci stable difussion
-Terraform script to start a stable-diffusion-webui in compute instance using a nvidia GPU in OCI.
+# OCI Generative AI
+Terraform script to start a stable-diffusion and bloom models in compute instance using a nvidia GPU in OCI.
 
 Stable Diffusion is a state of the art text-to-image model that generates images from text.
 
 <img src="stable-diffusion-webui-sample.jpg" />
+
+Bloom is a open-science, open-access multilingual large language model (LLM), with 176 billion parameters, and was trained using the NVIDIA AI platform, with text generation in 46 languages
+
+<img src="bloom.jpg" />
 
 ## Architecture
 
@@ -37,14 +41,21 @@ terraform apply
 
 **After applying, the service will be ready in about 20 minutes** (it will install OS dependencies, nvidia drivers, clone stable-difussion-webui and download stable-diffusion-model)
 
+If after that time the web apps are not ready, do a ssh to the machine and check that the size of the model of stable-difussion is around 4.0GB (downloading this file is the task that takes the most)
+
+```
+du -hs /home/ubuntu/stable-diffusion-webui/model.ckpt
+```
+
 ## Test
 To test the app it's necessary to create a ssh tunel to the port 7860 (the terraform output will give you the full command with the public IP)
 
 ```
-ssh -i server.key -L 7860:localhost:7860 ubuntu@<instance-public-ip>
+ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 ubuntu@<instance-public-ip>
 ```
 
-And after that open in a browser the url http://localhost:7860
+Stable diffusion => http://localhost:7860
+Bloom => http://localhost:5000
 
 ## Clean
 To delete the instance execute.
@@ -55,6 +66,9 @@ terraform destroy
 ## Stable diffusion model
 Right now the terraform is using the stable-diffusion-1.4, because I got a direct link to download the model, if you want to use 1.5 or any more recent version, you got to go to https://huggingface.co/ singup, login, download the model manually and replace the file in the location /home/ubuntu/stable-diffusion-webui/model.ckpt.
 
+*This is the more sensible and error prone part of the process*, the stable-diffusion model. If anything happens download the model manually and reboot the instance. 
+
 ## References
 
 - The stable-diffusion-webui project https://github.com/AUTOMATIC1111/stable-diffusion-webui
+- The bloom-webui https://github.com/carlgira/bloom-webui 
