@@ -13,12 +13,6 @@ Terraform script to start a **stable-diffusion, bloom and dreambooth** in comput
 
 <img src="images/dreambooth-webui.png" />
 
-## Architecture
-
-The architecture consist of a GPU instance where all the dependecies and software is installed.
-
-<img src="architecture.drawio.png" />
-
 ## Requirements
 
 - Terraform
