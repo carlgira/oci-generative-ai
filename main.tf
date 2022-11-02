@@ -16,9 +16,12 @@ resource "oci_core_instance" "instance" {
   display_name        = var.instance_name
   shape               = var.instance_shape
 
+
+  
   source_details {
     source_type = "image"
     source_id   = data.oci_core_images.images.images[0].id
+    boot_volume_size_in_gbs = 100
   }
 
   create_vnic_details {
@@ -107,11 +110,14 @@ output "instance_public_ip" {
   value = <<EOF
   
   Wait 20 minutes for the instance to be ready.
-  Then, you can connect to the instance using the following command:
 
+  ssh -i server.key ubuntu@${oci_core_instance.instance.public_ip}
+  
   ssh tunnel => 
-    ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 ubuntu@${oci_core_instance.instance.public_ip}
+    ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 -L 3000:localhost:3000 ubuntu@${oci_core_instance.instance.public_ip}
 
+  Setup and dreambooth => http://localhost:3000
+  
   stable diffusion => http://localhost:7860
   
   bloom => http://localhost:5000
