@@ -45,7 +45,7 @@ terraform plan
 terraform apply
 ```
 
-**After applying, the service will be ready in about 20 minutes** (it will install OS dependencies, nvidia drivers, and install stable-diffusion-web-ui, bloom-web-ui and dreambooth-webui.
+**After applying, the service will be ready in about 25 minutes** (it will install OS dependencies, nvidia drivers, and install stable-diffusion-web-ui, bloom-web-ui and dreambooth-webui.
 
 ## Post configuration
 To test the app it's necessary to create a ssh tunel to the port 7860 (stable-diffusion-webui), 5000 (bloom) and 3000 (dreambooth).  (the output of the terraform script will give the ssh full command so you only need to copy and paste)

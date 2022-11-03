@@ -109,7 +109,7 @@ resource "oci_core_virtual_network" "generative_ai_vcn" {
 output "instance_public_ip" {
   value = <<EOF
   
-  Wait 20 minutes for the instance to be ready.
+  Wait 25 minutes for the instance to be ready.
 
   ssh -i server.key ubuntu@${oci_core_instance.instance.public_ip}
   
