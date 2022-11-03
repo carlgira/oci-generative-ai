@@ -99,3 +99,4 @@ terraform destroy
 - The stable-diffusion-webui project https://github.com/AUTOMATIC1111/stable-diffusion-webui
 - The bloom-webui https://github.com/carlgira/bloom-webui 
 - The dreambooth-webui https://github.com/carlgira/dreambooth-webui
+- DotCSV explanation https://www.youtube.com/watch?v=rgKBjRLvjLs
