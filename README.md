@@ -25,11 +25,15 @@ Terraform script to start a **stable-diffusion, bloom and dreambooth** in comput
 
 2. Clone this repository
 
-3. Set two variables in your path. First the tenancy OCID and second the comparment OCID where the instance will be created.
+3. Set three variables in your path. 
+- The tenancy OCID, 
+- The comparment OCID where the instance will be created.
+- The "Region Identifier" of region of your tenancy. https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 
 ```
 export TF_VAR_tenancy_ocid='<tenancy-ocid>'
 export TF_VAR_compartment_ocid='<comparment-ocid>'
+export TF_VAR_region='<home-region>'
 ```
 
 4. Execute the script generate-keys.sh to generate private key to access the instance
