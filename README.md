@@ -116,14 +116,14 @@ If everything is ok, you will see a countdown of the time it will take the train
 
 Some prompts that you can use using the unique label you pass during training could be:
 
-> photo of <your-label> as a funko
+> photo of &lt;your-label&gt; as a funko
 
 
 
-> photo of <your-label> as a character of game of thrones
+> photo of &lt;your-label&gt; as a character of game of thrones
 
 
-> portrait of <your-label> with fully armored norse valkyrie, brass plated, symmetric golden wings, divine vibes,  sky background, sharp focus, highly detailed, cinematic lighting, studio quality, smooth render, unreal engine 5 rendered, octane, rendered, by artgerm, greg rutkowski, alphonse mucha
+> portrait of &lt;your-label&gt; with fully armored norse valkyrie, brass plated, symmetric golden wings, divine vibes,  sky background, sharp focus, highly detailed, cinematic lighting, studio quality, smooth render, unreal engine 5 rendered, octane, rendered, by artgerm, greg rutkowski, alphonse mucha
 
 ## Clean
 To delete the instance execute.
