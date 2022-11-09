@@ -132,7 +132,7 @@ terraform destroy
 ```
 
 ## Troubleshooting
-1. If one is the three apps (stable-diffusion-webui, bloom-webui, dreambooth-webui) is down, you can check the logs and the state of each service, with this commands.
+1. If one is the three apps (stable-diffusion-webui, bloom-webui, dreambooth-webui) is down, you can check the logs and the state of each service, with the commands.
 
 ```
 systemctl status stabble-diffusion
@@ -145,7 +145,7 @@ You can try to start the service by.
 sudo systemctl start <service-name>
 ```
 
-2. Once the training has started in dreambooth, you can check that is really working by running the next command.
+2. Once the training has started in dreambooth, you can check that is really working by running.
 ```
 ps -ef | grep acc
 ```
