@@ -159,9 +159,9 @@ Get the list of AD of your tenancy
 oci iam availability-domain list
 ```
 
-Change the index number from "0" to other of the ADs of your region. (in the case that your region has more than one AD)
+In the main.tf file, change the index number from "0" to other of the ADs of your region. (in the case that your region has more than one AD)
 ```
-availability_domain = data.oci_identity_availability_domains.ADs.availability_domains[0].name
+availability_domain = data.oci_identity_availability_domains.ADs.availability_domains.name
 ```
 This error can also happen if in your region there is no VM.GPU2.1, in that case you have to change the region var before executing the scripts. 
 ```
