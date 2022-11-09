@@ -84,15 +84,13 @@ Open the URL http://localhost:7860, in the top text area write and idea, and sta
 
 Use https://lexica.art/ for examples of promts that you can use.
 
-Some prompts that you can use to test could be.
+Prompts examples:
 
-```
-epic battle scene humans versus zombies, post apocalyptic, humanities last stand post human, Epic Background, highly detailed, sharp focus, 8k, 35mm, cinematic lighting
-```
 
-```
-a cowboy riding a tardigrade , made by Stanley Artgerm Lau, WLOP, Rossdraws, ArtStation, CGSociety, concept art, cgsociety, octane render, trending on artstation, artstationHD, artstationHQ, unreal engine, 4k, 8k,
-```
+> epic battle scene humans versus zombies, post apocalyptic, humanities last stand post human, Epic Background, highly detailed, sharp focus, 8k, 35mm, cinematic lighting
+
+
+> a cowboy riding a tardigrade , made by Stanley Artgerm Lau, WLOP, Rossdraws, ArtStation, CGSociety, concept art, cgsociety, octane render, trending on artstation, artstationHD, artstationHQ, unreal engine, 4k, 8k,
 
 
 ### Dreambooth
@@ -118,17 +116,14 @@ If everything is ok, you will see a countdown of the time it will take the train
 
 Some prompts that you can use using the unique label you pass during training could be:
 
-```
-photo of <your-label> as a funko
-```
+> photo of <your-label> as a funko
 
-```
-photo of <your-label> as a character of game of thrones
-```
 
-```
-portrait of <your-label> with fully armored norse valkyrie, brass plated, symmetric golden wings, divine vibes,  sky background, sharp focus, highly detailed, cinematic lighting, studio quality, smooth render, unreal engine 5 rendered, octane, rendered, by artgerm, greg rutkowski, alphonse mucha
-```
+
+> photo of <your-label> as a character of game of thrones
+
+
+> portrait of <your-label> with fully armored norse valkyrie, brass plated, symmetric golden wings, divine vibes,  sky background, sharp focus, highly detailed, cinematic lighting, studio quality, smooth render, unreal engine 5 rendered, octane, rendered, by artgerm, greg rutkowski, alphonse mucha
 
 ## Clean
 To delete the instance execute.
