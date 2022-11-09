@@ -151,6 +151,22 @@ ps -ef | grep acc
 ```
 It should appear 3 processes using the "accelerate" binary.
 
+3. Error ***Error: 404-NotAuthorizedOrNotFound, shape VM.GPU2.1 not found***.
+This could be happening because in your availability domain (AD) there is no a VM.GPU2.1 shape available. The script use by default the first AD, but maybe you have to change this manually.
+
+Get the list of AD of your tenancy
+```
+oci iam availability-domain list
+```
+
+Change the index number from "0" to other of the ADs of your region. (in the case that your region has more than one AD)
+```
+availability_domain = data.oci_identity_availability_domains.ADs.availability_domains[0].name
+```
+This error can also happen if in your region there is no VM.GPU2.1, in that case you have to change the region var before executing the scripts. 
+```
+export TF_VAR_region='<other-region>'
+```
 
 ## References
 - The stable-diffusion-webui project https://github.com/AUTOMATIC1111/stable-diffusion-webui
