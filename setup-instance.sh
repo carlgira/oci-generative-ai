@@ -2,7 +2,7 @@
 
 apt-get update -y
 apt-get upgrade -y
-apt install nvidia-driver-515 nvidia-dkms-515 nvidia-utils-515 -y
+apt install nvidia-driver-515 nvidia-dkms-515 nvidia-utils-515 nvidia-kernel-common-515 -y
 apt install wget git git-lfs python3 python3-pip python3-venv unzip -y
 apt-get install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev zlib1g-dev -y
 
@@ -10,8 +10,8 @@ apt-get install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev z
 wget -O /etc/apt/preferences.d/cuda-repository-pin-600 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
 apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub
 add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" -y
-sudo apt update
-sudo apt install cuda -y
+apt-get update -y
+apt install cuda -y
 sudo -c "echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc" ubuntu
 
 # Stable diffusion service
