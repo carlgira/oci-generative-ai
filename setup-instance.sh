@@ -44,7 +44,7 @@ WantedBy=multi-user.target
 EOT
 
 su -c "git clone https://github.com/carlgira/bloom-webui.git /home/$USER/bloom-webui" $USER
-su -c "cd /home/$USER/bloom-webui; git checkout d1a2ffa" $USER
+su -c "cd /home/$USER/bloom-webui; git checkout f21a51d" $USER
 
 # Dreambooth service
 
@@ -61,8 +61,7 @@ WantedBy=multi-user.target
 EOT
 
 su -c "git clone https://github.com/carlgira/dreambooth-webui.git /home/$USER/dreambooth-webui" $USER
-su -c "cd /home/$USER/dreambooth-webui; git checkout 4a4a354" $USER
-
+su -c "cd /home/$USER/dreambooth-webui; git checkout f21a51d" $USER
 
 systemctl daemon-reload
 systemctl enable stable-diffusion.service
