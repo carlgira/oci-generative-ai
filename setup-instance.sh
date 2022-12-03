@@ -44,7 +44,7 @@ WantedBy=multi-user.target
 EOT
 
 su -c "git clone https://github.com/carlgira/bloom-webui.git /home/$USER/bloom-webui" $USER
-su -c "cd /home/$USER/bloom-webui; git checkout e0d1a27" $USER
+su -c "cd /home/$USER/bloom-webui; git checkout d1a2ffa" $USER
 
 # Dreambooth service
 
