@@ -2,7 +2,7 @@
 
 apt-get update -y
 apt-get upgrade -y
-apt install nvidia-driver-515 nvidia-dkms-515 nvidia-utils-515 nvidia-kernel-common-515 -y
+apt install nvidia-driver-515 nvidia-dkms-515 nvidia-utils-515 -y
 apt install wget git git-lfs python3 python3-pip python3-venv unzip -y
 apt-get install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev zlib1g-dev -y
 
@@ -15,9 +15,9 @@ apt install cuda -y
 sudo -c "echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc" ubuntu
 
 # Stable diffusion service
-cat <<EOT >> /etc/systemd/system/stabble-diffusion.service
+cat <<EOT >> /etc/systemd/system/stable-diffusion.service
 [Unit]
-Description=systemd service start stabble-diffusion
+Description=systemd service start stable-diffusion
 
 [Service]
 ExecStart=/bin/bash /home/ubuntu/stable-diffusion-webui/webui.sh
