@@ -11,7 +11,7 @@ wget -O /etc/apt/preferences.d/cuda-repository-pin-600 https://developer.downloa
 apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub
 add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" -y
 apt update -y
-apt install cuda -y
+apt install cuda-11-8 -y
 sudo -c "echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc" $USER
 
 # Stable diffusion service
