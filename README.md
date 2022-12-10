@@ -18,6 +18,10 @@ Terraform script to start a **stable-diffusion, bloom and dreambooth** in comput
 1. Follow the instructions to add the authentication to your tenant https://medium.com/@carlgira/install-oci-cli-and-configure-a-default-profile-802cc61abd4f.
 
 2. Clone this repository
+```
+# Stable diffusion 1.5
+git clone --depth 1 --branch sdv1.5-bloom https://github.com/carlgira/oci-generative-ai.git
+```
 
 3. Set three variables in your path. 
 - The tenancy OCID, 
