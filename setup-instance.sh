@@ -3,7 +3,7 @@
 main_function() {
 USER='ubuntu'
 apt update -y
-apt install wget git git-lfs python3 python3-pip python3-venv unzip -y
+apt install wget git git-lfs python3 python3-pip python3-venv unzip zip -y
 apt install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev zlib1g-dev -y
 
 # Install cuda
