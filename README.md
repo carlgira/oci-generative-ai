@@ -20,7 +20,10 @@ Terraform script to start a **stable-diffusion, bloom and dreambooth** in comput
 2. Clone this repository
 ```
 # Stable diffusion 1.5
-git clone --depth 1 --branch sd1.5-bloom https://github.com/carlgira/oci-generative-ai.git
+git clone --depth 1 --branch sd1.5-bloom https://github.com/carlgira/oci-generative-ai
+
+# Stable diffusion 2.1
+git clone --depth 1 --branch sdv2.1 https://github.com/carlgira/oci-generative-ai
 ```
 
 3. Set three variables in your path. 
