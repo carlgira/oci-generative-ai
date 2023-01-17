@@ -5,7 +5,7 @@ USER='ubuntu'
 apt update -y
 apt install software-properties-common -y
 add-apt-repository ppa:deadsnakes/ppa -y
-apt install wget git git-lfs python3.8 python3.8-venv python3.8-distutils unzip zip cargo rustc  -y
+apt install wget git git-lfs python3.8 python3.8-venv python3.8-distutils python3 python3-pip python3-venv unzip zip cargo rustc  -y
 apt install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev zlib1g-dev -y
 
 # Install pip
