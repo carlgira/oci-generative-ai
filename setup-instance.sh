@@ -75,4 +75,4 @@ systemctl enable dreambooth.service
 systemctl start stable-diffusion.service bloom.service dreambooth.service bloom.service
 }
 
-#main_function 2>&1 >> /var/log/startup.log
+main_function 2>&1 >> /var/log/startup.log
