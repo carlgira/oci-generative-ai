@@ -1,13 +1,16 @@
 #!/bin/bash
 
-sudo apt install python3.8-distutils
-sudo apt install python3.8-venv
-
 main_function() {
 USER='ubuntu'
 apt update -y
-apt install wget git git-lfs python3 python3-pip python3-venv unzip zip -y
+apt install software-properties-common -y
+add-apt-repository ppa:deadsnakes/ppa -y
+apt install wget git git-lfs python3.8 python3.8-venv python3.8-distutils unzip zip cargo rustc  -y
 apt install ffmpeg libsm6 libxext6 p7zip-full rapidjson-dev libarchive-dev zlib1g-dev -y
+
+# Install pip
+wget https://bootstrap.pypa.io/get-pip.py
+python3.8 get-pip.py
 
 # Install cuda
 wget -O /etc/apt/preferences.d/cuda-repository-pin-600 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
@@ -72,4 +75,4 @@ systemctl enable dreambooth.service
 systemctl start stable-diffusion.service bloom.service dreambooth.service bloom.service
 }
 
-main_function 2>&1 >> /var/log/startup.log
+#main_function 2>&1 >> /var/log/startup.log
