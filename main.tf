@@ -114,13 +114,15 @@ output "instance_public_ip" {
   ssh -i server.key ubuntu@${oci_core_instance.instance.public_ip}
   
   ssh tunnel => 
-    ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 -L 3000:localhost:3000 -L 6000:localhost:6000 ubuntu@${oci_core_instance.instance.public_ip}
+    ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 -L 3000:localhost:3000 -L 4000:localhost:4000 ubuntu@${oci_core_instance.instance.public_ip}
 
   Setup and dreambooth => http://localhost:3000
   
   stable diffusion => http://localhost:7860
   
   bloom => http://localhost:5000
+
+  automatic-image-processing => http://localhost:4000
 
 EOF
 }
