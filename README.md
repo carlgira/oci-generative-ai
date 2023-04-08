@@ -20,7 +20,7 @@ Terraform script to start a **stable-diffusion, bloom and dreambooth** in comput
 2. Clone this repository
 ```
 # Stable diffusion 1.5
-git clone --depth 1 --branch sd1.5-bloom https://github.com/carlgira/oci-generative-ai.git
+git clone https://github.com/carlgira/oci-generative-ai.git
 ```
 
 3. Set three variables in your path. 
@@ -53,7 +53,7 @@ terraform apply
 To test the app it's necessary to create a ssh tunel to the port 7860 (stable-diffusion-webui), 5000 (bloom) and 3000 (dreambooth).  (the output of the terraform script will give the ssh full command so you only need to copy and paste)
 
 ```
-ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 -L 3000:localhost:3000 ubuntu@<instance-public-ip>
+ssh -i server.key -L 7860:localhost:7860 -L 5000:localhost:5000 -L 3000:localhost:3000 opc@<instance-public-ip>
 ```
 
 The last step of the setup is to download the stable-diffusion model, for that, is necessary to have a huggingface account, create a token and accept to the conditions to use stable-diffusion.
