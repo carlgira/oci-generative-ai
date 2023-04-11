@@ -39,7 +39,7 @@ WantedBy=multi-user.target
 EOT
 
 su -c "git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git /home/$USER/stable-diffusion-webui" $USER
-su -c "cd /home/$USER/stable-diffusion-webui; git checkout 2f01814" $USER # Working stable diffusion version (update if broken)
+#su -c "cd /home/$USER/stable-diffusion-webui; git checkout 2f01814" $USER # Working stable diffusion version (update if broken)
 
 
 # Add xformers
