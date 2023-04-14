@@ -100,10 +100,10 @@ EOT
 su -c "git clone https://github.com/carlgira/smart-crop.git /home/$USER/smart-crop" $USER
 
 # Firewall
-firewall-cmd --zone=public --add-port=7000/tcp --permanent 
-firewall-cmd --zone=public --add-port=3000/tcp --permanent 
-firewall-cmd --zone=public --add-port=4000/tcp --permanent
-firewall-cmd --reload
+#firewall-cmd --zone=public --add-port=7000/tcp --permanent 
+#firewall-cmd --zone=public --add-port=3000/tcp --permanent 
+#firewall-cmd --zone=public --add-port=4000/tcp --permanent
+#firewall-cmd --reload
 
 systemctl daemon-reload
 systemctl enable stable-diffusion.service bloom.service dreambooth.service smart-crop.service
